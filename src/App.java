@@ -53,26 +53,31 @@ public class App {
 
             switch (metodo) {
                 case 1:
-                    System.out.println("------------ BURBUJA ---------- \n--- Arreglo Original:   ");
+                    System.out.println("------------ BURBUJA ----------");
                     respuesta=metodoBurbujaClase.ordenar(arreglo, ascendente,conPasos);
-                    metodoBurbujaClase.imprimirArreglo(original);
                     metodoBurbujaClase.ordenar(arreglo, ascendente,conPasos);
-                    System.out.println("\n\t ---- FIN ----\n\n--- Arreglo Ordenado con: \n\tComparaciones: "+respuesta[0]+"\n\tCambios: "+respuesta[1]);
+                    System.out.println("\n\t ---- FIN ----\n\n--- Arreglo Original:   ");
+                    metodoBurbujaClase.imprimirArreglo(original);
+                    System.out.println("\n\n--- Arreglo Ordenado con: \n\tComparaciones: "+respuesta[0]+"\n\tCambios: "+respuesta[1]);
                     metodoBurbujaClase.imprimirArreglo(arreglo);
                     break;
                 case 2:
-                    System.out.println("------------ SELECCION ---------- \n--- Arreglo Original:   ");
+                    System.out.println("------------ SELECCION ---------- ");
                     respuesta=metodoSeleccion.ordenar(arreglo,ascendente,conPasos);
-                    metodoSeleccion.imprimirArreglo(original);
                     metodoSeleccion.ordenar(arreglo,ascendente,conPasos);
-                    System.out.println("\n\t ---- FIN ----\n\n--- Arreglo Ordenado con: \n\tComparaciones: "+respuesta[0]+"\n\tCambios: "+respuesta[1]);
+                    System.out.println("\n\t ---- FIN ----\n\n--- Arreglo Original:   ");
+                    metodoSeleccion.imprimirArreglo(original);
+                    System.out.println("\n\n--- Arreglo Ordenado con: \n\tComparaciones: "+respuesta[0]+"\n\tCambios: "+respuesta[1]);
                     metodoSeleccion.imprimirArreglo(arreglo);
                     break;
                 case 3:
-                    System.out.println("------------ INSERCION ---------- \n--- Arreglo Original:   ");
-                    respuesta = metodoInsercion.ordenarAsInsercion(arreglo);
-
-                    
+                    System.out.println("------------ INSERCION ---------- ");
+                    respuesta=metodoInsercion.ordenar(arreglo, ascendente,conPasos);
+                    metodoInsercion.ordenar(arreglo,ascendente,conPasos);
+                    System.out.println("\n\t ---- FIN ----\n\n--- Arreglo Original:   ");
+                    metodoInsercion.imprimirArreglo(original);
+                    System.out.println("\n--- Arreglo Ordenado con: \n\tComparaciones: "+respuesta[0]+"\n\tCambios: "+respuesta[1]);
+                    metodoInsercion.imprimirArreglo(arreglo);
                     break;
                 case 4:
 //                    System.out.println("****** BurbujaMejorado ********: ");
