@@ -6,27 +6,28 @@ public class MetodoSeleccion {
         }
         System.out.println("\n---------------------------------");
     }
-    public int[] ordenar(int[] arreglo,boolean ascendente,boolean conPasos) {
+
+    public int[] ordenar(int[] arreglo, boolean ascendente, boolean conPasos) {
         int n = arreglo.length;
         int contComparaciones = 0;
         int contCambios = 0;
-        boolean control=true;
+        boolean control = true;
 
-        if(conPasos){
-            if(ascendente){
-                for(int i=0;i<n;i++){
+        if (conPasos) {
+            if (ascendente) {
+                for (int i = 0; i < n; i++) {
                     int minIdx = i;
-                    for(int j=i+1;j<n;j++){
+                    for (int j = i + 1; j < n; j++) {
                         contComparaciones++;
-                        if(arreglo[j]<arreglo[minIdx]){
+                        if (arreglo[j] < arreglo[minIdx]) {
                             minIdx = j;
                         }
                         System.out.println("\nComparacion " + contComparaciones + " : " + arreglo[j] + " < " + arreglo[minIdx]);
-                        if(minIdx==i){
+                        if (minIdx == i) {
                             System.out.println("\n\tNo hay intercambio en el arreglo");
                         }
                     }
-                    if(minIdx!=i){
+                    if (minIdx != i) {
                         contCambios++;
                         imprimirArreglo(arreglo);
                         int aux = arreglo[minIdx];
@@ -36,20 +37,20 @@ public class MetodoSeleccion {
                         imprimirArreglo(arreglo);
                     }
                 }
-            }else{
-                for(int i=0;i<n;i++){
+            } else {
+                for (int i = 0; i < n; i++) {
                     int minIdx = i;
-                    for(int j=i+1;j<n;j++){
+                    for (int j = i + 1; j < n; j++) {
                         contComparaciones++;
-                        if(arreglo[j]>arreglo[minIdx]){
+                        if (arreglo[j] > arreglo[minIdx]) {
                             minIdx = j;
                         }
                         System.out.println("\nComparacion " + contComparaciones + " : " + arreglo[j] + " > " + arreglo[minIdx]);
-                        if(minIdx==i){
+                        if (minIdx == i) {
                             System.out.println("\n\tNo hay intercambio en el arreglo");
                         }
                     }
-                    if(minIdx!=i){
+                    if (minIdx != i) {
                         contCambios++;
                         imprimirArreglo(arreglo);
                         int aux = arreglo[minIdx];
@@ -60,33 +61,33 @@ public class MetodoSeleccion {
                     }
                 }
             }
-        }else{
-            if(ascendente){
-                for(int i=0;i<n;i++){
+        } else {
+            if (ascendente) {
+                for (int i = 0; i < n; i++) {
                     int minIdx = i;
-                    for(int j=i+1;j<n;j++){
-                        if(arreglo[j]<arreglo[minIdx]){
+                    for (int j = i + 1; j < n; j++) {
+                        if (arreglo[j] < arreglo[minIdx]) {
                             minIdx = j;
                         }
                     }
                     contComparaciones++;
-                    if(minIdx!=i){
+                    if (minIdx != i) {
                         contCambios++;
                         int aux = arreglo[minIdx];
                         arreglo[minIdx] = arreglo[i];
                         arreglo[i] = aux;
                     }
                 }
-            }else{
-                for(int i=0;i<n;i++){
+            } else {
+                for (int i = 0; i < n; i++) {
                     int minIdx = i;
-                    for(int j=i+1;j<n;j++){
-                        if(arreglo[j]>arreglo[minIdx]){
+                    for (int j = i + 1; j < n; j++) {
+                        if (arreglo[j] > arreglo[minIdx]) {
                             minIdx = j;
                         }
                     }
                     contComparaciones++;
-                    if(minIdx!=i){
+                    if (minIdx != i) {
                         contCambios++;
                         int aux = arreglo[minIdx];
                         arreglo[minIdx] = arreglo[i];
@@ -95,7 +96,7 @@ public class MetodoSeleccion {
                 }
             }
         }
-        int []respuesta= {contComparaciones,contCambios};
+        int[] respuesta = {contComparaciones, contCambios};
         return respuesta;
     }
 }
