@@ -11,7 +11,6 @@ public class MetodoSeleccion {
         int n = arreglo.length;
         int contComparaciones = 0;
         int contCambios = 0;
-        boolean control = true;
 
         if (conPasos) {
             if (ascendente) {
